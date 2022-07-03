@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>makedesigns</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div id="nav" class="container">
+        <nav>
+            {% for item in site.data.navigation %}
+            <a href="{{ item.link }}" {% if page.url==item.link %} class="active-page" {% endif %}>
+                {{ item.name }}
+            </a>
+            {% endfor %}
+        </nav>
+    </div>
+
+    <div id="content" class="container">
+        {{ content }}
+    </div>
+
+
+    <section id="contact" class="container">
+        <h2>sende mir deine unverbindliche projektanfrage!</h2>
+        <p>Du bist dir unsicher ob ich dir mit deinem Vorhaben helfen kann, oder hast schon eine konkrete Frage? Dann
+            sichere dir hier dein kostenloses Erstgespräch!</p>
+        <p class="highlight">Projektanfrage</p>
+        <form>
+            <!-- Form fields -->
+            <label class="form_SmallLabel" for="name">Name *</label><br>
+            <input class="form_TextInput" type="text" name="name" id="name" placeholder="Chef Bossing" required>
+            <br>
+            <label class="form_SmallLabel" for="mail">E-Mail *</label><br>
+            <input class="form_TextInput" type="email" name="name" id="mail" placeholder="marketing@bigcorp.de" required>
+            <br>
+            <label class="form_SmallLabel" for="message">Nachricht *</label><br>
+            <textarea type="text" name="name" id="message" required></textarea>
+            <br>
+            <div class="form_CheckboxContainer">
+                <input class="form_Checkbox" type="checkbox" name="dataPrivacy" id="dataPrivacy" required>
+                <label class="form_CheckboxLabel" for="dataPrivacy">
+                    Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur Beantwortung meiner Anfrage
+                    erhoben und verarbeitet werden. Weitere Informationen hierzu in der
+                    <a class="green" href="datenschutz.html">Datenschutzerklärung</a>. *
+                </label>
+            </div>
+            <button class="form_ContactBtn green" type="submit">
+                <img src="assets/images/contact-send-icon.svg" alt="Pfeil Icon">
+                Absenden
+            </button>
+            <span class="form_RequiredInfo">* Pflichtfelder</span>
+        </form>
+    </section>
+</body>
+
+</html>
