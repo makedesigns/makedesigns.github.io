@@ -31,10 +31,15 @@ github_username:  jekyll
 
 # Build settings
 # theme: minima
-# plugins:
+plugins:
+  - jekyll-multiple-languages-plugin
 #  - jekyll-feed
 
 source: source
+
+languages: ["en", "de"]
+exclude_from_localizations: ["javascript", "images", "css"]
+default_locale_in_subfolder: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
